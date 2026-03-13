@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -88,7 +89,6 @@
       display: flex; flex-direction: column; align-items: center; gap: 0;
     }
 
-    /* "We are getting married!" — Cormorant italic, elegant, hero top — smaller */
     .hero-tagline {
       font-family: 'Cormorant Garamond', Georgia, serif;
       font-style: italic;
@@ -103,24 +103,20 @@
       font-family: 'Pacifico', cursive;
       font-size: clamp(3rem, 10vw, 7rem); color: white;
       text-shadow: 4px 4px 0px rgba(0,0,0,0.2); line-height: 1.1;
+      /* Rendering Fixes */
+      font-weight: 400 !important;
+      -webkit-text-stroke: 0px;
+      letter-spacing: 1px;
     }
     .hero h1 span {
       display: block; font-size: 0.55em;
       color: var(--yellow); text-shadow: 2px 2px 0px rgba(0,0,0,0.25);
+      font-weight: 400 !important;
     }
 
-    /* Date + Save the date badge together at bottom */
     .hero-bottom {
       margin-top: 28px;
       display: flex; flex-direction: column; align-items: center; gap: 10px;
-    }
-
-    .hero-badge {
-      background: rgba(255,255,255,0.25); backdrop-filter: blur(10px);
-      border: 2px solid rgba(255,255,255,0.5); color: white;
-      padding: 6px 20px; border-radius: 50px; font-size: 0.78rem;
-      font-family: 'Nunito', sans-serif; font-weight: 800;
-      letter-spacing: 3px; text-transform: uppercase;
     }
 
     .hero-date {
@@ -147,6 +143,7 @@
       font-family: 'Pacifico', cursive;
       font-size: clamp(1.8rem, 5vw, 2.8rem);
       margin-bottom: 40px; text-align: center; position: relative;
+      font-weight: 400 !important;
     }
     .section-title::after {
       content: ''; display: block; width: 80px; height: 6px;
@@ -157,7 +154,7 @@
        WELCOME BLOCK
     ══════════════════════════════════════ */
     .welcome-outer {
-      padding: 40px 0 20px;   /* reduced top padding so calendar sits closer */
+      padding: 40px 0 20px;
       background: var(--white);
     }
 
@@ -169,15 +166,9 @@
       box-shadow: 0 8px 40px rgba(255,107,157,0.15);
     }
 
-    /* background watermark removed — envelope is explicit element only */
-    .welcome-section::before {
-      content: none;
-    }
-
     .welcome-section .section-title { color: var(--pink); margin-bottom: 12px; }
     .welcome-section .section-title::after { background: var(--pink); margin-bottom: 0; }
 
-    /* Big envelope emoji right under "You're invited!" */
     .welcome-envelope {
       font-size: 4rem;
       display: block;
@@ -186,7 +177,6 @@
       position: relative; z-index: 1;
     }
 
-    /* Quote block — moved up, slightly larger */
     .welcome-quote-block {
       display: block; margin: 0 auto 20px; max-width: 500px;
       background: rgba(168,85,247,0.09); border-left: 5px solid var(--purple);
@@ -197,11 +187,11 @@
       font-size: 1.05rem; font-style: italic; color: #999; margin-bottom: 8px;
     }
     .welcome-quote-text {
-      font-family: 'Pacifico', cursive; font-size: 1.35rem; /* +2 sizes */
+      font-family: 'Pacifico', cursive; font-size: 1.35rem;
       color: var(--purple); line-height: 1.6;
+      font-weight: 400 !important;
     }
 
-    /* Invitation body text — Cormorant Garamond italic (same as Jewish wisdom) */
     .welcome-body {
       font-family: 'Cormorant Garamond', Georgia, serif;
       font-style: italic;
@@ -210,7 +200,6 @@
       position: relative; z-index: 1;
     }
 
-    /* Emoji row at bottom */
     .welcome-emojis {
       font-size: 2rem; letter-spacing: 8px;
       position: relative; z-index: 1; margin-top: 4px;
@@ -221,7 +210,7 @@
     }
 
     /* ══════════════════════════════════════
-       CALENDAR — full month
+       CALENDAR
     ══════════════════════════════════════ */
     .calendar-section { background: var(--white); padding-top: 20px; }
     .calendar-section .section-title { color: var(--orange); }
@@ -237,6 +226,7 @@
       background: linear-gradient(135deg, var(--orange), var(--pink));
       color: white; text-align: center; padding: 20px;
       font-family: 'Pacifico', cursive; font-size: 1.5rem;
+      font-weight: 400 !important;
     }
     .cal-days-header {
       display: grid; grid-template-columns: repeat(7, 1fr);
@@ -302,27 +292,11 @@
       font-size: 0.8rem; font-weight: 800; font-family: 'Nunito', sans-serif;
       letter-spacing: 2px; text-transform: uppercase; margin-bottom: 4px;
     }
-    .tl-title { font-family: 'Pacifico', cursive; font-size: 1.1rem; margin-bottom: 6px; }
+    .tl-title { font-family: 'Pacifico', cursive; font-size: 1.1rem; margin-bottom: 6px; font-weight: 400 !important; }
     .tl-desc {
       font-family: 'Cormorant Garamond', Georgia, serif;
       font-size: 1.05rem; color: #666; line-height: 1.6;
     }
-
-    .tl-item:nth-child(1) .tl-dot { background: linear-gradient(135deg, var(--yellow), var(--orange)); }
-    .tl-item:nth-child(2) .tl-dot { background: linear-gradient(135deg, var(--pink), var(--purple)); }
-    .tl-item:nth-child(3) .tl-dot { background: linear-gradient(135deg, var(--green), var(--blue)); }
-    .tl-item:nth-child(4) .tl-dot { background: linear-gradient(135deg, var(--orange), var(--yellow)); }
-    .tl-item:nth-child(5) .tl-dot { background: linear-gradient(135deg, var(--purple), var(--pink)); }
-    .tl-item:nth-child(1) .tl-time { color: var(--orange); }
-    .tl-item:nth-child(2) .tl-time { color: var(--pink); }
-    .tl-item:nth-child(3) .tl-time { color: var(--green); }
-    .tl-item:nth-child(4) .tl-time { color: var(--orange); }
-    .tl-item:nth-child(5) .tl-time { color: var(--purple); }
-    .tl-item:nth-child(1) .tl-card { box-shadow: 4px 4px 0 var(--orange); }
-    .tl-item:nth-child(2) .tl-card { box-shadow: 4px 4px 0 var(--pink); }
-    .tl-item:nth-child(3) .tl-card { box-shadow: 4px 4px 0 var(--green); }
-    .tl-item:nth-child(4) .tl-card { box-shadow: 4px 4px 0 var(--orange); }
-    .tl-item:nth-child(5) .tl-card { box-shadow: 4px 4px 0 var(--purple); }
 
     /* ══════════════════════════════════════
        VENUE
@@ -336,21 +310,16 @@
       box-shadow: 8px 8px 0 var(--yellow); max-width: 700px; margin: 0 auto;
     }
     .venue-icon { font-size: 3rem; margin-bottom: 16px; }
-    .venue-name { font-family: 'Pacifico', cursive; font-size: 1.8rem; color: var(--orange); margin-bottom: 16px; }
+    .venue-name { font-family: 'Pacifico', cursive; font-size: 1.8rem; color: var(--orange); margin-bottom: 16px; font-weight: 400 !important; }
 
     .venue-photos {
       display: grid; grid-template-columns: repeat(3, 1fr);
       gap: 12px; margin: 0 0 24px;
     }
-    .venue-photos a { display: block; border-radius: 16px; overflow: hidden; }
     .venue-photos img {
       width: 100%; height: 150px; object-fit: cover;
       border-radius: 16px; box-shadow: 3px 3px 12px rgba(0,0,0,0.12);
-      transition: transform 0.3s;
     }
-    .venue-photos img:hover { transform: scale(1.05); }
-
-    .venue-address { font-size: 0.92rem; color: #666; line-height: 1.8; font-style: italic; }
 
     /* ══════════════════════════════════════
        DRESS CODE
@@ -365,7 +334,7 @@
     .dress-emojis { font-size: 2.5rem; letter-spacing: 8px; margin: 16px 0 24px; animation: wiggle 2s ease-in-out infinite; }
     @keyframes wiggle { 0%, 100% { transform: rotate(-3deg); } 50% { transform: rotate(3deg); } }
     .dress-text { font-size: 1.18rem; line-height: 1.9; color: #444; font-style: italic; }
-    .dress-text strong { font-size: 1.3rem; color: var(--purple); font-family: 'Pacifico', cursive; font-style: normal; }
+    .dress-text strong { font-size: 1.3rem; color: var(--purple); font-family: 'Pacifico', cursive; font-style: normal; font-weight: 400 !important; }
 
     /* ══════════════════════════════════════
        CONTACTS
@@ -379,17 +348,14 @@
       text-align: center; box-shadow: 5px 5px 0 var(--purple);
       min-width: 220px; transition: transform 0.2s;
     }
-    .contact-card:hover { transform: translateY(-4px); }
     .contact-avatar { font-size: 3rem; margin-bottom: 12px; }
-    .contact-name { font-family: 'Pacifico', cursive; font-size: 1.3rem; color: var(--purple); margin-bottom: 14px; }
+    .contact-name { font-family: 'Pacifico', cursive; font-size: 1.3rem; color: var(--purple); margin-bottom: 14px; font-weight: 400 !important; }
     .contact-phone {
       display: inline-block; font-family: 'Nunito', sans-serif;
       font-size: 1.05rem; font-weight: 800; color: white;
       background: linear-gradient(135deg, var(--purple), var(--pink));
       padding: 10px 22px; border-radius: 50px; text-decoration: none;
-      box-shadow: 3px 3px 0 rgba(0,0,0,0.12); transition: transform 0.2s;
     }
-    .contact-phone:hover { transform: translateY(-2px); }
 
     /* ══════════════════════════════════════
        FOOTER
@@ -399,13 +365,7 @@
       text-align: center; padding: 50px 20px;
       position: relative; overflow: hidden;
     }
-    footer::before {
-      content: '💗💍💗💗💗💗'; position: absolute;
-      font-size: 6rem; opacity: 0.05;
-      top: 50%; left: 50%; transform: translate(-50%, -50%);
-      letter-spacing: 20px; white-space: nowrap;
-    }
-    .footer-names { font-family: 'Pacifico', cursive; font-size: 2rem; color: var(--yellow); margin-bottom: 8px; }
+    .footer-names { font-family: 'Pacifico', cursive; font-size: 2rem; color: var(--yellow); margin-bottom: 8px; font-weight: 400 !important; }
     .footer-date { color: #aaa; font-size: 0.95rem; font-family: 'Nunito', sans-serif; }
 
     /* ══════════════════════════════════════
@@ -419,20 +379,15 @@
     }
     .countdown-label { font-family: 'Nunito', sans-serif; font-weight: 800; font-size: 0.85rem; letter-spacing: 2px; text-transform: uppercase; color: var(--yellow); }
     .countdown-units { display: flex; gap: 12px; }
-    .countdown-unit { text-align: center; }
-    .countdown-num { font-family: 'Pacifico', cursive; font-size: 1.8rem; color: var(--pink); line-height: 1; }
+    .countdown-num { font-family: 'Pacifico', cursive; font-size: 1.8rem; color: var(--pink); line-height: 1; font-weight: 400 !important; }
     .countdown-sub { font-family: 'Nunito', sans-serif; font-size: 0.65rem; color: #888; text-transform: uppercase; letter-spacing: 1px; }
 
-    /* ══════════════════════════════════════
-       RESPONSIVE
-    ══════════════════════════════════════ */
     @media (max-width: 600px) {
       .timeline::before { left: 24px; }
       .tl-item, .tl-item:nth-child(odd) { flex-direction: column; padding-left: 60px; }
       .tl-item:nth-child(odd) .tl-card { text-align: left; }
       .tl-dot { left: 24px; transform: translateX(-50%); }
       .tl-card { width: 100%; }
-      .welcome-section { padding: 36px 20px 28px; margin: 0 10px; }
       .venue-photos { grid-template-columns: 1fr 1fr; }
     }
   </style>
@@ -441,7 +396,6 @@
 
 <canvas id="confetti-canvas"></canvas>
 
-<!-- COUNTDOWN BAR -->
 <div class="countdown-bar">
   <div class="countdown-label">💍 The big day in</div>
   <div class="countdown-units" id="countdown">
@@ -452,259 +406,107 @@
   </div>
 </div>
 
-<!-- ══ HERO ══ -->
 <div class="hero">
   <div class="hero-photo-placeholder" id="heroPlaceholder"><span>💗 📸 💗</span></div>
   <div class="hero-photo-bg" id="heroBg" style="background-image: url('photo.jpg');"></div>
   <div class="hero-overlay"></div>
 
-  <span class="sticker">💐</span>
-  <span class="sticker">🎉</span>
-  <span class="sticker">🥂</span>
-  <span class="sticker">✨</span>
-  <span class="sticker">💃</span>
-  <span class="sticker">🕺</span>
-  <span class="sticker">🎊</span>
+  <span class="sticker">💐</span><span class="sticker">🎉</span><span class="sticker">🥂</span>
+  <span class="sticker">✨</span><span class="sticker">💃</span><span class="sticker">🕺</span><span class="sticker">🎊</span>
 
   <div class="hero-content">
-    <!-- "We are getting married!" moved from welcome block to here, elegant italic -->
     <div class="hero-tagline">We are getting married</div>
-
-    <h1>Dumitru<span>&amp;</span>Ecaterina</h1>
-
-    <!-- Date below names -->
+    <h1>Dumitru<span>&</span>Ecaterina</h1>
     <div class="hero-bottom">
       <div class="hero-date"><span>13</span> June <span>2026</span> 💗</div>
     </div>
   </div>
-
   <div class="photo-hint">📸 Place photo.jpg next to index.html to show your photo here</div>
 </div>
 
-<!-- ══ WELCOME ══ -->
 <div class="welcome-outer">
   <div class="welcome-section">
-    <!-- "You're invited!" title centered -->
     <div class="section-title">You're invited! 🎊</div>
-
-    <!-- Big 💌 right under title, centered -->
     <span class="welcome-envelope">💌</span>
-
-    <!-- Jewish wisdom quote — moved up, slightly bigger -->
     <div class="welcome-quote-block">
       <div class="welcome-quote-intro">As old Jewish wisdom says...</div>
       <div class="welcome-quote-text">"Joy has to be shared."</div>
     </div>
-
-    <!-- Invitation text — Cormorant Garamond italic (same style as Jewish wisdom) -->
     <div class="welcome-body">
       We are inviting you — our closest, most wonderful people —<br/>
       to share this magical day with us.<br/>
-      Come hungry, come happy, come ready to dance<br/>
-      until your shoes give up!
+      Come hungry, come happy, come ready to dance!
     </div>
-
-    <!-- Emoji row: varied festive mix, kissing couple instead of sparkle -->
     <div class="welcome-emojis">
-      <span class="section-sticker" style="animation-delay:0s">💗</span>
-      <span class="section-sticker" style="animation-delay:0.3s">🎈</span>
-      <span class="section-sticker" style="animation-delay:0.6s">🥂</span>
-      <span class="section-sticker" style="animation-delay:0.9s">💐</span>
-      <span class="section-sticker" style="animation-delay:1.2s">🎊</span>
-      <span class="section-sticker" style="animation-delay:1.5s">👩‍❤️‍💋‍👨</span>
+      <span class="section-sticker">💗</span><span class="section-sticker">🎈</span>
+      <span class="section-sticker">🥂</span><span class="section-sticker">💐</span>
+      <span class="section-sticker">🎊</span><span class="section-sticker">👩‍❤️‍💋‍👨</span>
     </div>
   </div>
 </div>
 
-<!-- ══ CALENDAR — full month ══ -->
-<section class="calendar-section" style="padding-top: 30px;">
-  <div class="section-title">
-    Mark Your Calendar
-    <span style="display:inline-block; background:white; border:2px solid var(--orange); border-radius:8px; margin-left:10px; vertical-align:middle; overflow:hidden; box-shadow:2px 2px 0 var(--orange); width:44px; text-align:center; font-size:0.45em; line-height:1;">
-      <span style="display:block; background:var(--pink); color:white; font-family:'Nunito',sans-serif; font-weight:800; padding:2px 0; font-size:1em;">JUN</span>
-      <span style="display:block; color:var(--dark); font-family:'Nunito',sans-serif; font-weight:900; font-size:1.6em; padding:1px 0;">13</span>
-    </span>
-  </div>
-
+<section class="calendar-section">
+  <div class="section-title">Mark Your Calendar</div>
   <div class="calendar-wrap">
     <div class="calendar">
       <div class="cal-header">June 2026</div>
-      <div class="cal-days-header">
-        <span>Mon</span><span>Tue</span><span>Wed</span><span>Thu</span><span>Fri</span><span>Sat</span><span>Sun</span>
-      </div>
+      <div class="cal-days-header"><span>Mon</span><span>Tue</span><span>Wed</span><span>Thu</span><span>Fri</span><span>Sat</span><span>Sun</span></div>
       <div class="cal-grid">
-        <div class="cal-day">1</div><div class="cal-day">2</div><div class="cal-day">3</div>
-        <div class="cal-day">4</div><div class="cal-day">5</div><div class="cal-day">6</div>
-        <div class="cal-day">7</div><div class="cal-day">8</div><div class="cal-day">9</div>
-        <div class="cal-day">10</div><div class="cal-day">11</div><div class="cal-day">12</div>
-        <div class="cal-day today">13</div>
-        <div class="cal-day">14</div><div class="cal-day">15</div><div class="cal-day">16</div>
-        <div class="cal-day">17</div><div class="cal-day">18</div><div class="cal-day">19</div>
-        <div class="cal-day">20</div><div class="cal-day">21</div><div class="cal-day">22</div>
-        <div class="cal-day">23</div><div class="cal-day">24</div><div class="cal-day">25</div>
-        <div class="cal-day">26</div><div class="cal-day">27</div><div class="cal-day">28</div>
-        <div class="cal-day">29</div><div class="cal-day">30</div>
+        <div class="cal-day">1</div><div class="cal-day">2</div><div class="cal-day">3</div><div class="cal-day">4</div><div class="cal-day">5</div><div class="cal-day">6</div><div class="cal-day">7</div><div class="cal-day">8</div><div class="cal-day">9</div><div class="cal-day">10</div><div class="cal-day">11</div><div class="cal-day">12</div><div class="cal-day today">13</div><div class="cal-day">14</div><div class="cal-day">15</div><div class="cal-day">16</div><div class="cal-day">17</div><div class="cal-day">18</div><div class="cal-day">19</div><div class="cal-day">20</div><div class="cal-day">21</div><div class="cal-day">22</div><div class="cal-day">23</div><div class="cal-day">24</div><div class="cal-day">25</div><div class="cal-day">26</div><div class="cal-day">27</div><div class="cal-day">28</div><div class="cal-day">29</div><div class="cal-day">30</div>
       </div>
     </div>
   </div>
-
-  <p style="text-align:center; margin-top: 20px; font-size: 1.05rem; color: #888; font-style: italic;">
-    💗 = that one day when everything is perfect
-  </p>
 </section>
 
-<!-- ══ TIMELINE ══ -->
 <section class="timeline-section">
   <div class="section-title">The Plan ✨</div>
   <div class="timeline">
-
-    <!-- Gathering -->
-    <div class="tl-item">
-      <div class="tl-dot">👋</div>
-      <div class="tl-card">
-        <div class="tl-time">16:00</div>
-        <div class="tl-title">Gathering</div>
-        <div class="tl-desc">Arrive, hug everyone, grab a drink, pretend you remember everyone's names 😄</div>
-      </div>
-      <div style="width: calc(50% - 40px);"></div>
-    </div>
-
-    <!-- Ceremony — couple with heart emoji -->
-    <div class="tl-item">
-      <div class="tl-dot">👩‍❤️‍👨</div>
-      <div class="tl-card">
-        <div class="tl-time">17:00</div>
-        <div class="tl-title">The Ceremony</div>
-        <div class="tl-desc">The magical "yes" moment. Tissues recommended. Happy tears only! 🥹</div>
-      </div>
-      <div style="width: calc(50% - 40px);"></div>
-    </div>
-
-    <!-- Dinner with clinking glasses -->
-    <div class="tl-item">
-      <div class="tl-dot">🥂</div>
-      <div class="tl-card">
-        <div class="tl-time">18:00</div>
-        <div class="tl-title">Dinner Time!</div>
-        <div class="tl-desc">Feast like royalty. Eat everything. No judgment here 🍷🍽🥂<br/>
-          <span style="font-size:1.4rem;">🥂</span> — two glasses clinking, one toast at a time!</div>
-      </div>
-      <div style="width: calc(50% - 40px);"></div>
-    </div>
-
-    <!-- Cake — no exact time -->
-    <div class="tl-item">
-      <div class="tl-dot">🎂</div>
-      <div class="tl-card">
-        <div class="tl-time">Some time during the evening…</div>
-        <div class="tl-title">Cutting the Cake! 🍰</div>
-        <div class="tl-desc">The sweetest moment of the night — stay close, you won't want to miss it 😋</div>
-      </div>
-      <div style="width: calc(50% - 40px);"></div>
-    </div>
-
-    <!-- Party -->
-    <div class="tl-item">
-      <div class="tl-dot">🎶</div>
-      <div class="tl-card">
-        <div class="tl-time">until 01:00</div>
-        <div class="tl-title">Party & Dancing!</div>
-        <div class="tl-desc">Dance floor is mandatory. We will be checking. Your knees have no excuse 💃🕺<br/>
-          <em style="font-size:0.9rem; color:#aaa; display:block; margin-top:6px;">
-            …or 02:00… or 03:00… or maybe until the sun decides to join the party ☀️😏
-          </em>
-        </div>
-      </div>
-      <div style="width: calc(50% - 40px);"></div>
-    </div>
-
+    <div class="tl-item"><div class="tl-dot">👋</div><div class="tl-card"><div class="tl-time">16:00</div><div class="tl-title">Gathering</div><div class="tl-desc">Arrive and grab a drink!</div></div></div>
+    <div class="tl-item"><div class="tl-dot">👩‍❤️‍👨</div><div class="tl-card"><div class="tl-time">17:00</div><div class="tl-title">The Ceremony</div><div class="tl-desc">The magical "yes" moment.</div></div></div>
+    <div class="tl-item"><div class="tl-dot">🥂</div><div class="tl-card"><div class="tl-time">18:00</div><div class="tl-title">Dinner Time!</div><div class="tl-desc">Feast and toasts.</div></div></div>
+    <div class="tl-item"><div class="tl-dot">🎂</div><div class="tl-card"><div class="tl-time">Evening</div><div class="tl-title">Cake!</div><div class="tl-desc">The sweetest moment.</div></div></div>
+    <div class="tl-item"><div class="tl-dot">🎶</div><div class="tl-card"><div class="tl-time">Late</div><div class="tl-title">Dancing!</div><div class="tl-desc">Dance floor is mandatory.</div></div></div>
   </div>
 </section>
 
-<!-- ══ VENUE ══ -->
-<section class="venue-section" style="max-width:100%; padding:60px 20px;">
-  <div style="max-width:900px; margin:0 auto;">
-    <div class="section-title">Where to find us 📍</div>
-
-    <div class="venue-card">
-      <div class="venue-icon">🌳🏡🌿</div>
-      <div class="venue-name">Curtea Moșului</div>
-
-      <div class="venue-photos">
-        <a href="https://maps.google.com/?q=Curtea+Mosului+Chisinau" target="_blank">
-          <img src="https://lh3.googleusercontent.com/p/AF1QipPGz5vD6vMb2i5LiqjbbEjq-kqgzHiYPIi1cNmz=s680-w680-h510" alt="Curtea Mosului garden" onerror="this.parentElement.style.display='none'"/>
-        </a>
-        <a href="https://maps.google.com/?q=Curtea+Mosului+Chisinau" target="_blank">
-          <img src="https://lh3.googleusercontent.com/p/AF1QipM9QKPlmEhlf3g_gg5oNp1rJmiqhFVW_fPxNi1A=s680-w680-h510" alt="Curtea Mosului venue" onerror="this.parentElement.style.display='none'"/>
-        </a>
-        <a href="https://maps.google.com/?q=Curtea+Mosului+Chisinau" target="_blank">
-          <img src="https://lh3.googleusercontent.com/p/AF1QipO5zYfCJ2q_bXcyvjkrEL9eH_R8dAjn5LcVxhAI=s680-w680-h510" alt="Curtea Mosului nature" onerror="this.parentElement.style.display='none'"/>
-        </a>
-      </div>
-
-      <div class="venue-address">
-        <span style="display:block; font-family:'Cormorant Garamond',serif; font-style:italic; font-size:1.1rem; color:#555; margin-bottom:10px;">
-          🌿 A beautiful garden venue surrounded by nature
-        </span>
-        <span style="display:block; font-style:italic; font-size:0.9rem; color:#888; line-height:1.7;">
-          Strada Nicolae Milescu Spătaru 38<br/>
-          Chisinau, Ciocana · Moldova 🇲🇩
-        </span><br/>
-        <a href="https://maps.google.com/?q=Curtea+Mosului+Chisinau+Moldova"
-           target="_blank"
-           style="display:inline-block; margin-top:4px; background: linear-gradient(135deg, var(--orange), var(--pink)); color:white; padding: 12px 28px; border-radius: 50px; text-decoration: none; font-family:'Nunito',sans-serif; font-weight: 800; font-size: 0.9rem; box-shadow: 3px 3px 0 rgba(0,0,0,0.15);">
-          📍 Open in Maps
-        </a>
-      </div>
+<section class="venue-section">
+  <div class="section-title">Where to find us 📍</div>
+  <div class="venue-card">
+    <div class="venue-icon">🌳🏡🌿</div>
+    <div class="venue-name">Curtea Moșului</div>
+    <div class="venue-address">
+      Strada Nicolae Milescu Spătaru 38<br/>
+      Chisinau, Moldova 🇲🇩<br/><br/>
+      <a href="https://maps.google.com" target="_blank" style="color:var(--pink); font-weight:800; text-decoration:none;">📍 Open in Maps</a>
     </div>
   </div>
 </section>
 
-<!-- ══ DRESS CODE ══ -->
 <section class="dress-section">
   <div class="section-title">What to wear? 🎨</div>
   <div class="dress-card">
-    <div class="dress-emojis">👗🤵🩱🎩👘🧢👙🦺</div>
-    <div class="dress-text">
-      <strong>Anything you want!</strong><br/><br/>
-      Seriously. ANYTHING.<br/>
-      Formal? Great. Casual? Perfect. That funky Hawaiian shirt you love? ICONIC.
-      The important thing is YOU being there — not what's on you 🎉<br/><br/>
-      <em style="color:#888; font-size: 0.95rem;">(Though sparkles and colors are always welcome 💅✨)</em>
-    </div>
+    <div class="dress-emojis">👗🤵✨</div>
+    <div class="dress-text"><strong>Anything you want!</strong><br/>Formal or casual, we just want you there.</div>
   </div>
 </section>
 
-<!-- ══ CONTACTS ══ -->
 <section class="contacts-section">
-  <div class="section-title">Any questions? 💬</div>
+  <div class="section-title">Questions? 💬</div>
   <div class="contacts-grid">
-    <div class="contact-card">
-      <div class="contact-avatar">🤵</div>
-      <div class="contact-name">Dumitru</div>
-      <a class="contact-phone" href="tel:+37369937999">+373 699 37 999</a>
-    </div>
-    <div class="contact-card">
-      <div class="contact-avatar">👰‍♀️</div>
-      <div class="contact-name">Ecaterina</div>
-      <a class="contact-phone" href="tel:+37368942542">+373 689 42 542</a>
-    </div>
+    <div class="contact-card"><div class="contact-name">Dumitru</div><a class="contact-phone" href="tel:+37369937999">+373 699 37 999</a></div>
+    <div class="contact-card"><div class="contact-name">Ecaterina</div><a class="contact-phone" href="tel:+37368942542">+373 689 42 542</a></div>
   </div>
 </section>
 
-<!-- ══ FOOTER ══ -->
 <footer>
-  <div style="font-size: 3rem; margin-bottom: 16px;">💗</div>
   <div class="footer-names">Dumitru & Ecaterina</div>
-  <div class="footer-date">13 June 2026 · Curtea Moșului · Chisinau</div>
-  <div style="margin-top: 30px; font-size: 1.8rem; letter-spacing: 8px; opacity: 0.5;">💃 🥂 👩‍❤️‍👨 💗 🕺</div>
+  <div class="footer-date">13 June 2026</div>
 </footer>
 
 <script>
-// Countdown
 function updateCountdown() {
   const diff = new Date('2026-06-13T16:00:00') - new Date();
-  if (diff <= 0) { document.getElementById('countdown').innerHTML = '<div style="color:var(--yellow);font-family:Pacifico;font-size:1.2rem">🎊 The big day is here! 🎊</div>'; return; }
+  if (diff <= 0) return;
   document.getElementById('cd-days').textContent  = String(Math.floor(diff/86400000)).padStart(2,'0');
   document.getElementById('cd-hours').textContent = String(Math.floor((diff%86400000)/3600000)).padStart(2,'0');
   document.getElementById('cd-mins').textContent  = String(Math.floor((diff%3600000)/60000)).padStart(2,'0');
@@ -712,46 +514,32 @@ function updateCountdown() {
 }
 setInterval(updateCountdown, 1000); updateCountdown();
 
-// Confetti
 const canvas = document.getElementById('confetti-canvas');
 const ctx = canvas.getContext('2d');
 canvas.width = window.innerWidth; canvas.height = window.innerHeight;
-window.addEventListener('resize', () => { canvas.width = window.innerWidth; canvas.height = window.innerHeight; });
 const COLORS = ['#FFE135','#FF6B9D','#FF9A3C','#4ECDC4','#A855F7','#3B82F6'];
 const pieces = Array.from({length:80}, () => ({
-  x: Math.random()*window.innerWidth, y: Math.random()*window.innerHeight - window.innerHeight,
+  x: Math.random()*canvas.width, y: Math.random()*canvas.height - canvas.height,
   w: Math.random()*10+5, h: Math.random()*5+3,
   color: COLORS[Math.floor(Math.random()*COLORS.length)],
-  rotation: Math.random()*360, speed: Math.random()*2+0.5,
-  drift: Math.random()*2-1, rotSpeed: (Math.random()-0.5)*4, opacity: Math.random()*0.7+0.3
+  speed: Math.random()*2+1
 }));
-(function drawConfetti() {
+function draw() {
   ctx.clearRect(0,0,canvas.width,canvas.height);
   pieces.forEach(p => {
-    ctx.save(); ctx.globalAlpha=p.opacity; ctx.translate(p.x,p.y); ctx.rotate(p.rotation*Math.PI/180);
-    ctx.fillStyle=p.color; ctx.fillRect(-p.w/2,-p.h/2,p.w,p.h); ctx.restore();
-    p.y+=p.speed; p.x+=p.drift; p.rotation+=p.rotSpeed;
-    if (p.y>canvas.height+20) { p.y=-20; p.x=Math.random()*canvas.width; }
+    ctx.fillStyle=p.color; ctx.fillRect(p.x,p.y,p.w,p.h);
+    p.y+=p.speed; if(p.y>canvas.height) p.y=-10;
   });
-  requestAnimationFrame(drawConfetti);
-})();
+  requestAnimationFrame(draw);
+}
+draw();
 
-// Show/hide hero photo
 const bg = document.getElementById('heroBg');
 const ph = document.getElementById('heroPlaceholder');
 const t = new Image();
 t.onload = () => ph.style.display='none';
 t.onerror = () => bg.style.display='none';
 t.src = 'photo.jpg';
-
-// Scroll reveal
-const obs = new IntersectionObserver(e => e.forEach(x => {
-  if (x.isIntersecting) { x.target.style.opacity='1'; x.target.style.transform='translateY(0)'; }
-}), {threshold:0.1});
-document.querySelectorAll('.tl-card,.venue-card,.dress-card,.welcome-section,.calendar,.contact-card').forEach(el => {
-  el.style.opacity='0'; el.style.transform='translateY(30px)';
-  el.style.transition='opacity 0.6s ease, transform 0.6s ease'; obs.observe(el);
-});
 </script>
 </body>
 </html>
